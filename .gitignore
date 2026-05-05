@@ -1,0 +1,6 @@
+.env
+notas.txt
+/grafana
+/influx_data
+/swag
+/grafana_data_backup
