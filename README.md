@@ -2,6 +2,21 @@
 
 Sistema de monitoreo de energía solar. El proyecto recolecta datos en tiempo real de un inversor mediante una Raspberry Pi. La Raspberry utiliza **Telegraf** para la recolección, procesamiento e inserción de los datos en la base de datos. Los datos recopilados son almacenados en una base de datos de series temporales **InfluxDB** y mediante ellos se generan visualizaciones en **Grafana**.
 
+## Recolección de datos
+
+Los paneles solares se encuentran conectados a un elevador-inversor para convertir la energía CC a CA y adecuarla para el uso de las cargas conectadas al sistema.
+
+
+| Paneles | Elevador-Inversor |
+| :---: | :---: |
+| <img src="assets/paneles.jpg" width="400" alt="paneles">| <img src="assets/inversor-elevador.jpg" width="400" alt="inversor"> |
+
+Mediante el protocolo Modbus sobre RS-485, la Raspberry Pi solicita periódicamente al microcontrolador del inversor para su posterior envío a la VPS e insersión en la base de datos.
+
+| RPI | RPI-Tablero |
+| :---: | :---: |
+| <img src="assets/rpi-bateria-placa.jpg" width="400" alt="paneles">| <img src="assets/rpi-tablero.jpg" width="400" alt="inversor"> |
+
 ## 📊 Visualización
 
 En esta sección se muestran las métricas del sistema y el estado de la Raspberry Pi.
@@ -24,7 +39,7 @@ El dashboard se encuentra disponible: [Monitoreo-Solar](assets/dashboard-monitor
 
 El dashboard se encuentra disponible: [Monitoreo-RPI](assets/dashboard-rpi.json)
 
-![RPi](assets/rpi-grafana.png)
+![RPi](assets/rpi-grafana-completa.png)
 
 
 ## 🛠️ Tecnologías Utilizadas
