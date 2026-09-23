@@ -4,14 +4,13 @@ Sistema de monitoreo de energía solar. El proyecto recolecta datos en tiempo re
 
 ## Recolección de datos
 
-Los paneles solares se encuentran conectados a un elevador-inversor para convertir la energía CC a CA y adecuarla para el uso de las cargas conectadas al sistema.
-
+Los paneles solares se encuentran conectados a una etapa elevadora-inversora que transforma la energía en corriente continua (CC) a corriente alterna (CA), acondicionándola para el consumo de las cargas acopladas al sistema.
 
 | Paneles | Elevador-Inversor |
 | :---: | :---: |
 | <img src="assets/paneles.jpg" width="400" alt="paneles">| <img src="assets/inversor-elevador.jpg" width="400" alt="inversor"> |
 
-Mediante el protocolo Modbus sobre RS-485, la Raspberry Pi solicita periódicamente al microcontrolador del inversor para su posterior envío a la VPS e insersión en la base de datos.
+A través del protocolo Modbus sobre RS-485, la Raspberry Pi sondea periódicamente los registros de variables eléctricas del microcontrolador del inversor. Para garantizar un funcionamiento autónomo y confiable, el concentrador dispone de una placa de circuito impreso diseñada a medida que integra la interfaz de comunicación, una etapa de gestión de alimentación con control de carga y descarga de batería, y un módulo RTC (Real Time Clock) para mantener la sincronización temporal ante pérdidas de conectividad o energía. Posteriormente, los datos recolectados se transmiten al servidor VPS para su inserción y almacenamiento en la base de datos.
 
 | RPI | RPI-Tablero |
 | :---: | :---: |
